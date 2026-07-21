@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mu WhatsApp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. SCREEN YA KUINGIA (LOGIN SCREEN) -->
+    <div id="login-screen" class="screen active">
+        <div class="login-box">
+            <img src="assets/profile.jpg" id="login-dp" class="app-dp" alt="Mu WhatsApp DP">
+            <h2>Mu WhatsApp</h2>
+            <p>Ingiza namba yako ya simu kuanza</p>
+            
+            <div class="input-group">
+                <input type="tel" id="phone-input" placeholder="+255 7XX XXX XXX">
+                <button onclick="login()">INGIA</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. SCREEN YA CHAT (MAIN CHAT SCREEN) -->
+    <div id="chat-screen" class="screen">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-left">
+                <img src="assets/profile.jpg" id="user-dp" class="header-dp" onclick="openProfileSettings()" title="Bonyeza kubadilisha DP">
+                <h3>Mu WhatsApp</h3>
+            </div>
+            <div class="header-right">
+                <button onclick="triggerBgChange()">Badili Background</button>
+            </div>
+        </div>
+
+        <!-- Chat List / Messages area -->
+        <div class="chat-body" id="chat-body">
+            <div class="message received">
+                <span>Karibu kwenye Mu WhatsApp! Mfumo huu hauna Meta AI.</span>
+                <small>10:00 AM</small>
+            </div>
+            <div class="message sent">
+                <span>Safi sana, muonekano na background ziko poa kabisa!</span>
+                <small>10:01 AM</small>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="chat-input-area">
+            <input type="text" id="message-input" placeholder="Andika ujumbe...">
+            <button onclick="sendMessage()">Tuma</button>
+        </div>
+    </div>
+
+    <!-- Hidden File Inputs kwa ajili ya kubadilisha picha -->
+    <input type="file" id="dp-file-input" accept="image/*" style="display:none;" onchange="updateDP(event)">
+    <input type="file" id="bg-file-input" accept="image/*" style="display:none;" onchange="updateBackground(event)">
+
+    <script src="app.js"></script>
+</body>
+</html>
